@@ -1,0 +1,6 @@
+1.本包的几个类主要解决百分数的问题，当前前端展示和后端存储不匹配，前端是百分数后端是小数（差100倍）
+2.在入参object的相应属性加注解
+    @JsonDeserialize(using = PercentageInputDeserialize.class) 负责反序列化，将百分数除以100
+    @Percentage(min="0", max="100") 对JsonDeserialize后的百分比进行比较，判断是否越界，min max都是百分数，与前端输入一致
+3.出参中属性加
+    @JsonSerialize(using = PercentageOutputSerialize.class)    负责序列化，将百分比乘100返给前端

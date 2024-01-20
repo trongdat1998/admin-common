@@ -1,0 +1,4 @@
+include:
+  - project: 'bhpc/ci'
+    ref: master
+    file: '/jar11.yml'
